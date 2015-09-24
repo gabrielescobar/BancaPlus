@@ -1,0 +1,28 @@
+<ion-view  title="{{'log' | translate}}">
+    <ion-content ng-controller="loginController"  class="has-header login-content">
+
+        <div  class="spacer" style="height: 10px;" ></div>
+
+        <div class="logo" style="height: 120px;"></div>
+
+        <div class="text-center" style="width: 90%; margin: 0 auto">
+            <div class="login_tittle" ><font color="white">{{'log' | translate}}</font></div>
+                <div class="login_field" style="padding: 5%;">
+                    <input maxlength="8" class="user" style="padding-left: 5%; margin: 0 auto"  type="text" placeholder="{{'usr' | translate}}" ng-model="user.name" />
+                    <input maxlength="10" class="password" style="padding-left: 5%; margin: 0 auto; margin-bottom: 2%;"  type="password" placeholder="{{'pss' | translate}}" ng-model="user.password" />
+
+                    <button  class="button-clean" ng-click="clean()">{{'cln' | translate}}</button>
+                    <button  class="button-accept" ng-click="login(user.name,user.password)">{{'acpt' | translate}}</button>
+
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="first_footer"> {{actualVersion}} </div>
+            <div class="second_footer">
+                <img ng-if="existCss == 'NO'" ng-src="resources/footer.png" />
+                <img ng-if="existCss == 'YES'" ng-src="{{ externalDirectory }}resources/footer.png" />
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

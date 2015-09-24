@@ -1,0 +1,56 @@
+<ion-side-menus enable-menu-with-back-views="true" ng-controller="actionController">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-positive">
+            <ion-nav-back-button>
+            </ion-nav-back-button>
+
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+                </button>
+            </ion-nav-buttons>
+
+            <ion-nav-buttons side="right" >
+                <button class="button button-icon icon ion-log-out"  ng-click="logoutf()">
+                </button>
+            </ion-nav-buttons>
+
+        </ion-nav-bar>
+
+        <ion-nav-view name="menuContent"></ion-nav-view>
+    </ion-side-menu-content>
+
+    <ion-side-menu width="220" side="left">
+        <ion-header-bar class="bar-positive">
+            <h1 class="title">{{'options' | translate}}</h1>
+        </ion-header-bar>
+        <ion-content>
+
+            <ion-list>
+                <ion-item nav-clear menu-close ng-if="whereAmi != 'globalstatement'" ng-click="relocate('global')" class="item" style="margin-left: 2%;">
+                    {{'globalstatement' | translate}}
+                </ion-item>
+                <ion-item nav-clear menu-close ng-if="whereAmi != 'paytran'" ng-click="relocate('transfer')" class="item" style="margin-left: 2%;">
+                    {{'paytran' | translate}}
+                </ion-item>
+
+                <ion-item nav-clear menu-close ng-if="whereAmi != 'geo'" ng-click="relocate('geo')" class="item" style="margin-left: 2%;">
+                    {{'geo' | translate}}
+                </ion-item>
+
+                <ion-item nav-clear menu-close ng-if="whereAmi != 'contact'" ng-click="relocate('contact')" class="item" style="margin-left: 2%;">
+                    {{'contact' | translate}}
+                </ion-item>
+
+                <ion-item nav-clear menu-close ng-if="logout==true" ng-click="logoutf()" class="item" style="margin-left: 2%;">
+                    {{'logout' | translate}}
+                </ion-item>
+
+                <ion-item nav-clear menu-close ng-if="login==true" href="#/languages/login" class="item">
+                    {{'log' | translate}}
+                </ion-item>
+
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+
+</ion-side-menus>

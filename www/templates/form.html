@@ -1,0 +1,184 @@
+
+    <ion-view title="{{'tranfandpayment' | translate}}">
+        <ion-content class="login">
+            <div id="search-bar">
+                <div class="item-input-inset">
+                    <label class="item-input-wrapper" id="search-input">
+                        <i class="icon ion-search placeholder-icon"></i>
+                        <input type="text"  placeholder="{{'search' | translate}}" ng-model="search" ng-change="change(search)"/>
+                    </label>
+                </div>
+            </div>
+            <div class="origin-account">
+                {{'originaccount' | translate}}
+            </div>
+            <div class="origin-field">
+                <fancy-select
+                        header-text="{{account_origin_fund}}"
+                        allow-empty='true'
+                        value="val.account_origin_fund"
+                        text="account_origin_fund"
+                        items="aof">
+                </fancy-select>
+            </div>
+            <div class="card card-trans-select item-custom" style="margin-left: 2%; margin-right: 2%; margin-top: 0%" >
+                <div class="item-divider">
+                    {{'destaccount' | translate}}
+                </div>
+
+                <div class="dest-account"></div>
+                <div class="item item-text-wrap" ng-if="aod.length > 0" ng-show="Value_account_same_owner">
+                    <div  class="item-custom item-icon-right">
+                        <img   class="icon consultar next" />
+                        <fancy-select
+                                header-text="{{account_same_owner}}"
+                                allow-empty='true'
+                                value="val.account_same_owner"
+                                text="account_same_owner"
+                                items="aod"
+                                multi-select="true"
+                                >
+                        </fancy-select>
+                        </div>
+                </div>
+
+                <div class="item item-text-wrap" ng-if="atsb.length > 0" ng-show="Value_account_other_person">
+                    <a class="item-custom item-icon-right">
+                        <img   class="icon consultar next" />
+                        <fancy-select
+                                header-text="{{account_other_person}}"
+                                allow-empty='true'
+                                value="val.account_other_person"
+                                text="account_other_person"
+                                items="atsb"
+                                multi-select="true"
+                                >
+                        </fancy-select>
+                    </a>
+                </div>
+
+                <div class="item item-text-wrap" ng-if="atob.length > 0" ng-show="Value_account_external_bank">
+                    <a  class="item-custom item-icon-right">
+                        <img   class="icon consultar next" />
+                        <fancy-select
+                                header-text="{{account_external_bank}}"
+                                allow-empty='true'
+                                value="val.account_external_bank"
+                                text="account_external_bank"
+                                items="atob"
+                                multi-select="true"
+                                >
+                        </fancy-select>
+                    </a>
+                </div>
+
+                <div class="item item-text-wrap" ng-if="creditowner.length > 0" ng-show="Value_creditcard_same_owner">
+                    <a  class="item-custom item-icon-right">
+                        <img   class="icon consultar next" />
+                        <fancy-select
+                                header-text="{{creditcard_same_owner}}"
+                                allow-empty='true'
+                                value="val.creditcard_same_owner"
+                                text="creditcard_same_owner"
+                                items="creditowner"
+                                multi-select="true"
+                                >
+                        </fancy-select>
+                    </a>
+                </div>
+
+
+
+                <div class="item item-text-wrap" ng-if="loanowner.length > 0" ng-show="Value_loan_same_bank">
+                    <a class="item-custom item-icon-right">
+                        <img   class="icon consultar next" />
+                        <fancy-select
+                                header-text="{{loan_same_bank}}"
+                                allow-empty='true'
+                                value="val.loan_same_bank"
+                                text="loan_same_bank"
+                                items="loanowner"
+                                multi-select="true"
+                                >
+                        </fancy-select>
+                    </a>
+                </div>
+
+                <div class="item item-text-wrap" ng-if="services.length > 0" ng-show="Value_services_same_bank">
+                    <a  class="item-custom item-icon-right">
+                        <img   class="icon consultar next" />
+                        <fancy-select
+                                header-text="{{services_same_bank}}"
+                                allow-empty='true'
+                                value="val.services_same_bank"
+                                text="services_same_bank"
+                                items="services"
+                                multi-select="true"
+                                >
+                        </fancy-select>
+                    </a>
+                </div>
+            </div>
+
+            <button class="button button-block button-positive" style="width: 40%;margin: 0 auto;" ng-click="next()">
+                {{'next' | translate}}
+            </button>
+
+        </ion-content>
+    </ion-view>
+
+
+<script id="fancy-select.html" type="text/ng-template">
+
+
+        <div class="item-custom2" ng-click="showItems($event)">
+           <b>{{text}}</b>
+
+        </div>
+
+</script>
+
+<script id="fancy-select-items.html" type="text/ng-template">
+    <ion-view class="fancy-select-items modal">
+        <ion-header-bar align-title="center" title="headerTitle" class="bar-positive">
+
+            <button ng-click="hideItems()" class="button button-icon icon ion-close-circled"></button>
+
+            <h1 class="title">{{headerText}}</h1>
+
+            <button ng-click="validate()" class="button button-icon icon ion-checkmark-circled"></button>
+
+        </ion-header-bar>
+        <ion-content>
+            <div class="list">
+                <!-- Multi select -->
+                <ion-toggle
+                        ng-repeat="item in items"
+                        ng-if="multiSelect"
+                        ng-checked="item.checked"
+                        ng-model="item.checked"
+                        class="item item-text-wrap">
+                    <div class="fancy-select-icon" ng-if="item.icon != null">
+                        <img src="{{item.icon}}" />
+                    </div>
+                    {{item.text}}
+                </ion-toggle>
+
+                <!-- Single select -->
+                <label
+                        ng-repeat="item in items"
+                        ng-if="!multiSelect"
+                        class="item item-text-wrap"
+                        ng-click='validateSingle(item)'>
+                    <div class="fancy-select-icon" ng-if="item.icon != null">
+                        <i class="icon-{{item.text}}" style="background-image: url({{item.icon}})"></i>
+                    </div>
+                    {{item.text}}
+                </label>
+            </div>
+        </ion-content>
+    </ion-view>
+</script>
+
+</body>
+</html>

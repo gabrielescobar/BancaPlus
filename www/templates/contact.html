@@ -1,0 +1,82 @@
+<ion-view title="{{'contact' | translate}}" ng-switch on='existCss'>
+    <img ng-switch-when="NO" ng-src="resources/logout.png" />
+    <img ng-switch-when="YES" ng-src="{{ externalDirectory }}resources/logout.png" />
+    <ion-content padding="true" class="has-header contact" ng-controller="contactController">
+        <ion-list></ion-list>
+            <div class="contact-subheader">{{'contact-details' | translate}}</div>
+            <div class="contactenos-list thumbnail-contact" id="cont1-dir">
+                <div ng-switch on='existCss'>
+                    <img ng-switch-when="NO" ng-src="resources/direccion.png" />
+                    <img ng-switch-when="YES" ng-src="{{ externalDirectory }}resources/direccion.png" />
+                    <div class="social-info">
+                        <h2>{{ 'address' | translate }}</h2>
+                    </div>
+                </div>
+                <p class="p-contact">Aquí debe ir la dirección de la sucursal. Aquí debe ir la dirección de la sucursal.</p>
+            </div>
+            <div class="contactenos-list thumbnail-contact" id="cont1-telf">
+                <div ng-switch on='existCss'>
+                    <img ng-switch-when="NO" ng-src="resources/telefonos.png" />
+                    <img ng-switch-when="YES" ng-src="{{ externalDirectory }}resources/telefonos.png" />
+                    <div class="social-info">
+                        <h2>{{ 'phones' | translate }}</h2>
+                    </div>
+                </div>
+                <p class="p-contact"><a href="tel:+582123318351">(0000)000.00.00</a> / <a href="tel:+582123318351">(0000)000.00.00</a></p>
+            </div>
+            <div class="contactenos-list thumbnail-contact" id="cont1-hour">
+                <div ng-switch on='existCss'>
+                    <img ng-switch-when="NO" src="resources/horario.png" />
+                    <img ng-switch-when="YES" src="{{ externalDirectory }}resources/horario.png" />
+                    <div class="social-info">
+                        <h2>{{ 'horary-contact' | translate }}</h2>
+                    </div>
+                </div>
+                <p class="p-contact">De lunes a viernes de 00:00 AM a 00:00 PM</p>
+            </div>
+
+            <div class="contact-subheader">{{ 'social-networks' | translate }}</div>
+            <div class="contactenos-list thumbnail-contact">
+                <div>
+                    <a ng-click="openUrl('https://twitter.com/synergygb')" ng-switch on='existCss'>
+                        <img ng-switch-when="NO" src="resources/twitter.png" />
+                        <img ng-switch-when="YES" src="{{ externalDirectory }}resources/twitter.png" />
+                    </a>
+                    <h2></h2>
+                    <div class="social-info social-net">
+                        <p class="p-contact"><a ng-click="openUrl('https://twitter.com/synergygb')">{{ 'twitter' | translate }}</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="contactenos-list thumbnail-contact">
+                <div>
+                    <a ng-click="openUrl('https://www.facebook.com/SynergyGB')" ng-switch on='existCss'>
+                        <img ng-switch-when="NO" src="resources/facebook.png" />
+                        <img ng-switch-when="YES" src="{{ externalDirectory }}resources/facebook.png" />
+                    </a>
+                    <h2></h2>
+                    <div class="social-info social-net">
+                        <p class="p-contact"><a ng-click="openUrl('https://www.facebook.com/SynergyGB')">{{ 'facebook' | translate }}</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="contactenos-list">
+                <div>
+                    <a ng-click="openUrl('https://www.youtube.com/watch?v=KI0NBNS2N7Y')" ng-switch on='existCss'>
+                        <img ng-switch-when="NO" src="resources/youtube.png" />
+                        <img ng-switch-when="YES" src="{{ externalDirectory }}resources/youtube.png" />
+                    </a>
+                    <h2></h2>
+                    <div class="social-info social-net">
+                        <p class="p-contact"><a ng-click="openUrl('https://www.youtube.com/watch?v=KI0NBNS2N7Y')">{{ 'youtube' | translate }}</a></p>
+                    </div>
+                </div>
+            </div>
+
+        <style type="text/css" ng-if="notLogged">
+            .ion-log-out {
+                display: none;
+            }
+        </style>
+    </ion-content>
+</ion-view>

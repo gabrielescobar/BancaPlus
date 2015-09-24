@@ -1,0 +1,111 @@
+<ion-view title="{{'tranfandpayment' | translate}}">
+    <ion-content ng-controller="transferConfirmController" padding="true" class="has-header login">
+
+        <div class="origin-account" style="margin-left: 3.7%;margin-right: 3.7%;margin-top: 5%; margin-bottom: -6.6%;">
+            {{'transferconfirm' | translate}}
+        </div>
+        <div class="card" style=" margin-left: 5%; margin-right: 5%;">
+
+            <div class="item item-divider">
+                {{'debitaccount' | translate}}
+            </div>
+            <div class="dest-account"></div>
+            <div class="item item-text-wrap">
+                {{origin}}
+            </div>
+
+        </div>
+
+        <div class="card" style=" margin-left: 5%; margin-right: 5%;"  ng-if="val.loan_same_bank">
+
+            <div class="item item-divider">
+                {{'loandest' | translate}}
+            </div>
+            <div class="dest-account"></div>
+            <div class="item item-text-wrap" ng-repeat="item in val.loan_same_bank">
+                {{item.value}}
+                <br>
+              <pre>{{'amount' | translate}}                {{prestamos[$index].currency}}  {{prestamos[$index].amount}}</pre>
+            </div>
+
+        </div>
+
+        <div class="card" style=" margin-left: 5%; margin-right: 5%;" ng-if="val.creditcard_same_owner">
+
+            <div class="item item-divider">
+                {{'tdcdest' | translate}}
+            </div>
+            <div class="dest-account"></div>
+            <div class="item item-text-wrap" ng-repeat="item in val.creditcard_same_owner">
+                {{item.value}}
+                <br>
+                <pre>{{'amount' | translate}}                 {{tarjetas[$index].currency}}  {{tarjetas[$index].amount}}</pre>
+            </div>
+
+        </div>
+
+        <div class="card" style=" margin-left: 5%; margin-right: 5%;" ng-if="val.services_same_bank">
+
+            <div class="item item-divider">
+                {{'servicesdest' | translate}}
+            </div>
+            <div class="dest-account"></div>
+            <div class="item item-text-wrap" ng-repeat="item in val.services_same_bank">
+                {{item.value}}
+                <br>
+                <pre>{{'amount' | translate}}                 {{servicios[$index].currency}}  {{servicios[$index].amount}}</pre>
+                <pre ng-if="serviciosConcept[$index]">{{'concept' | translate}}                 {{serviciosConcept[$index]}}</pre>
+            </div>
+
+        </div>
+
+        <div class="card" style=" margin-left: 5%; margin-right: 5%;" ng-if="val.account_same_owner">
+
+            <div class="item item-divider">
+                {{'accountdest' | translate}}
+            </div>
+            <div class="dest-account"></div>
+            <div class="item item-text-wrap" ng-repeat="item in val.account_same_owner ">
+                {{item.value}}
+                <br>
+                <pre>{{'amount' | translate}}                 {{mismasCuentas[$index].currency}}  {{mismasCuentas[$index].amount}}</pre>
+            </div>
+
+        </div>
+
+        <div class="card" style=" margin-left: 5%; margin-right: 5%;"  ng-if="val.account_external_bank">
+
+            <div class="item item-divider">
+                {{'otherbankdest' | translate}}
+            </div>
+            <div class="dest-account"></div>
+            <div class="item item-text-wrap" ng-repeat="item in val.account_external_bank">
+                {{item.value}}
+                <br>
+                <pre>{{'amount' | translate}}                 {{cuentasOtrosBancos[$index].currency}}  {{cuentasOtrosBancos[$index].amount}}</pre>
+                <pre ng-if="cuentasOtrosBancosConcept[$index]">{{'concept' | translate}}                {{cuentasOtrosBancosConcept[$index]}}</pre>
+            </div>
+
+        </div>
+
+        <div class="card" style=" margin-left: 5%; margin-right: 5%;"  ng-if="val.account_other_person">
+
+            <div class="item item-divider">
+                {{'otheraccountdest' | translate}}
+            </div>
+            <div class="dest-account"></div>
+            <div class="item item-text-wrap" ng-repeat="item in val.account_other_person">
+                {{item.value}}
+                <br>
+                <pre>{{'amount' | translate}}                 {{otrasCuentas[$index].currency}}  {{otrasCuentas[$index].amount}}</pre>
+                <pre ng-if="otrasCuentasConcept[$index]">{{'concept' | translate}}                 {{otrasCuentasConcept[$index]}}</pre>
+            </div>
+
+        </div>
+
+        <button class="button button-block button-positive" style="width: 40%;margin: 0 auto;"  ng-click="confirm()">
+            {{'confirm' | translate}}
+        </button>
+    </ion-content>
+
+</ion-view>

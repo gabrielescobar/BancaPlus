@@ -1,0 +1,75 @@
+<ion-view title="{{'tranfandpayment' | translate}}">
+    <ion-content ng-controller="transferAmountController" class="has-header login">
+
+        <div class="origin-account" style="margin-left: 3.7%;margin-right: 3.7%;margin-top: 5%;">
+            {{'transactions' | translate}}
+        </div>
+        <div class="card card-amount" style=" margin-top: 0%;">
+
+            <div class="item item-text-wrap" style="padding-top: 1% ! important;" ng-repeat="item in val.creditcard_same_owner">
+                <p class="description">{{item.value}}</p>
+                <ul class="list" style="padding-top: 1% ! important;margin-bottom: -1%; margin-left: -2%;">
+                    <li class="item item-checkbox">
+                        <label class="checkbox">
+                            <input type="checkbox"  checked ng-model="totalPayment[$index]" ng-click ='clickcreditCard($index,"total")' >
+                        </label>
+                     <pre>{{'totalpay' | translate}}   {{item.balance}}</pre>
+                    </li>
+                    <li class="item item-checkbox">
+                        <label class="checkbox">
+                            <input type="checkbox" ng-model="minPayment[$index]" ng-click = 'clickcreditCard($index,"min")'>
+                        </label>
+                        <pre>{{'minpay' | translate}} {{item.minpay}}</pre>
+                    </li>
+                    <li class="item">
+                    <input class="user item item-input" style="width: 262px; padding-left: 10px; height: 39px;" type="number" placeholder="{{'anotheramount' | translate}}" ng-model="tarjetas[$index]" ng-change='clickcreditCard($index,"custom")'>
+                    </li>
+                </ul>
+                <div  class="title-trans" style=" height: 5px; /* padding: 5%; */ padding-top: 5%; margin-top: 5;"> </div>
+            </div>
+
+            <div class="item item-text-wrap" style="padding-top: 1% ! important;" ng-repeat="item in val.account_same_owner">
+               <p class="description">{{item.value}}</p>
+
+                <input class="user item item-input" style="width: 262px; padding-left: 10px; height: 39px;margin: 0 auto;" type="number" placeholder="{{'amount' | translate}}" ng-model="mismasCuentas[$index]" name="uName" required="">
+                <div  class="title-trans" style=" height: 5px; /* padding: 5%; */ padding-top: 5%; margin-top: 5;"> </div>
+            </div>
+
+            <div class="item item-text-wrap" style="padding-top: 1% ! important;" ng-repeat="item in val.account_other_person">
+                <p class="description">{{item.value}}</p>
+                <input class="user item item-input" style="width: 262px; padding-left: 10px; height: 39px;margin: 0 auto;" type="number" placeholder="{{'amount' | translate}}" ng-model="otrasCuentas[$index]"  required="">
+                <input class="password" style="width: 262px; padding-left: 10px; height: 39px;margin: 0 auto;" type="text" placeholder="{{'concept' | translate}}" ng-model="otrasCuentasConcept[$index]"  required="">
+                <div  class="title-trans" style=" height: 5px; /* padding: 5%; */ padding-top: 5%; margin-top: 5;"> </div>
+            </div>
+
+            <div class="item item-text-wrap" style="padding-top: 1% ! important;" ng-repeat="item in val.account_external_bank">
+                <p class="description">{{item.value}}</p>
+
+                <input class="user item item-input" style="width: 262px; padding-left: 10px; height: 39px;margin: 0 auto;" type="number" placeholder="{{'amount' | translate}}" ng-model="cuentasOtrosBancos[$index]" name="uName" required="">
+                <input class="password item item-input" style="width: 262px; padding-left: 10px; height: 39px;margin: 0 auto;" type="text" placeholder="{{'concept' | translate}}" ng-model="cuentasOtrosBancosConcept[$index]" name="uName" required="">
+                <div  class="title-trans" style=" height: 5px; /* padding: 5%; */ padding-top: 5%; margin-top: 5;"> </div>
+            </div>
+
+            <div class="item item-text-wrap" style="padding-top: 1% ! important;" ng-repeat="item in val.loan_same_bank">
+                <p class="description">{{item.value}}</p>
+                <input class="user item item-input" style="width: 262px; padding-left: 10px; height: 39px;margin: 0 auto;" type="number" placeholder="{{'amount' | translate }}"  ng-model="prestamos[$index]" name="uName" required="">
+                <div  class="title-trans" style=" height: 5px; /* padding: 5%; */ padding-top: 5%; margin-top: 5;"> </div>
+            </div>
+
+            <div class="item item-text-wrap" style="padding-top: 1% ! important;" ng-repeat="item in val.services_same_bank">
+                <p class="description">{{item.value}}</p>
+                <input class="user item item-input" style="width: 262px; padding-left: 10px; height: 39px;margin: 0 auto;" type="number" placeholder="{{'amount' | translate}}" ng-model="servicios[$index]" name="uName" required="">
+                <input class="password item item-input" style="width: 262px; padding-left: 10px; height: 39px;margin: 0 auto;" type="text" placeholder="{{'concept' | translate}}" ng-model="serviciosConcept[$index]" name="uName" required="">
+                <div  class="title-trans" style=" height: 5px; /* padding: 5%; */ padding-top: 5%; margin-top: 5;"> </div>
+            </div>
+        </div>
+
+        <button class="button button-block button-positive" style="width: 40%;margin: 0 auto;"  ng-click="transfer()">
+            {{'next' | translate}}
+        </button>
+
+    </ion-content>
+</ion-view>
+
+
+

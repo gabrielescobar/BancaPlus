@@ -1,0 +1,21 @@
+<ion-view title="Transferencias y Pagos">
+    <ion-content ng-controller="otpController" padding="true" class="has-header login">
+
+        <div class="card" style=" margin-left: 10%;margin-right: 10%;">
+
+            <div class="item item-divider title-custom" style="color: #ffffff">
+                Introduzca OTP
+            </div>
+            <div class="item item-text-wrap">
+                <input maxlength="10" class="field" style="padding-left: 10%; margin: 0 auto"  type="password" placeholder="OTP" ng-model="otp">
+            </div>
+            <button class="button button-positive" style="margin-left: 30%"  ng-click="confirm()">
+                Confirmar
+            </button>
+        </div>
+
+
+
+    </ion-content>
+
+</ion-view>

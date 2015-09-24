@@ -1,0 +1,42 @@
+<ion-view id="sucDetails-view" title="{{ 'branches-title' | translate }}">
+    <ion-content padding="true" id="ubicanos-det-backg" ng-controller="geoDetailsController">
+
+        <ui-gmap-google-map center='map2.center' zoom='map2.zoom' class="detailsMap">
+            <ui-gmap-marker coords="marker.coords" idkey="marker.id" icon="marker.icon">
+            </ui-gmap-marker>
+        </ui-gmap-google-map>
+
+        <div class="sucursal-details">
+            <div class="centered double-arrow">
+                <img ng-src="{{ externalDirectory }}resources/double-arrow.png" />
+            </div>
+            <h4>{{ 'branches' | translate }}</h4>
+            <div class="blueline"></div>
+
+            <div class="row sucursal-names">
+                <div class="col centered" ng-repeat="branch in closests" ng-switch on='existCss'>
+                    <img ng-switch-when="NO" ng-src="resources/marker.png" />
+                    <img ng-switch-when="YES" ng-src="{{ externalDirectory }}resources/marker.png" />
+                    <span>{{ branch.title }}</span>
+                </div>
+            </div>
+
+            <div class="greyline"></div>
+
+            <h5>{{'address' | translate }}</h5>
+            <div class="greyline"></div>
+            <div class="text">{{ sucursal.address }}</div>
+            <div class="greyline"></div>
+            <h5>{{ 'branch-detail' | translate }}</h5>
+            <div class="greyline"></div>
+            <div class="text">{{ 'horary' | translate }} {{ sucursal.horary }}</div>
+            <div class="text">{{ 'phones' | translate }} {{ sucursal.tlfs }}</div>
+        </div>
+
+        <style type="text/css" ng-if="notLogged">
+            .ion-log-out {
+                display: none;
+            }
+        </style>
+    </ion-content>
+</ion-view>

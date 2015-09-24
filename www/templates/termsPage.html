@@ -1,0 +1,13 @@
+<ion-view title="{{'terms' | translate}}">
+    <ion-content ng-controller="termsController">
+            <div ng-show="user.terms" style="text-align:justify; text-justify: inter-word; padding-left:30px; padding-right:30px; ">{{user.terms}}</div>
+        <div class="row">
+            <div class="col col-40 text-center">
+                <button class="button button-block button-positive" ng-click="rejectTerms()">{{'cancel' | translate}}</button>
+            </div>
+            <div class="col col-40 text-center">
+                <button class="button button-block button-positive" ng-click="acceptTerms()">{{'acpt' | translate}}</button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

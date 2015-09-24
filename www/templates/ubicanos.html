@@ -1,0 +1,25 @@
+<ion-view id="ubicanos-view" title="{{ 'branches-title' | translate }}" data-tap-disabled="true">
+    <ion-content padding="true" id="ubicanos-backg" ng-controller="geolocationController">
+
+        <div class="geo-search">
+            <div class="geo-search-finder">
+                <input type="text" ng-model="title" />
+                <a ng-click="search(title)" >
+                    <img ng-if="existCss == 'NO'" ng-src="resources/search.png" />
+                    <img ng-if="existCss == 'YES'" ng-src="{{ externalDirectory }}resources/search.png" />
+                </a>
+            </div>
+        </div>
+
+        <ui-gmap-google-map center='map.center' zoom='map.zoom' style="height: 100%;">
+            <ui-gmap-markers models="markers" coords="'self'" icon="'icon'" click="'click'">
+            </ui-gmap-markers>
+        </ui-gmap-google-map>
+
+        <style type="text/css" ng-if="notLogged">
+            .ion-log-out {
+                display: none;
+            }
+        </style>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,166 @@
+<ion-view title="{{'globalstatement' | translate}}" align-title="right">
+
+
+    <ion-content ng-controller="globalController" padding="true" class="has-header login">
+
+        <div ng-show="data.user.firstName" style="padding-left: 35%" class="welcome">
+            <div>
+                <p style="margin: 0 0 0px !important;"> {{'welcome' | translate}} <strong>{{data.user.title}} {{data.user.firstName}} {{data.user.lastName}}</strong></p>
+            </div>
+
+            <div>
+                <p>{{'lcon' | translate}} <strong>{{data.user.lastSession}}</strong></p>
+            </div>
+        </div>
+
+        <div id="res1-banner" ui-sref="transfer">
+
+                <div class="banner" style="width: 290px; height: 51px"  ng-if="bannerTrue"></div>
+        </div>
+
+        <!--
+        <div  style="padding-left: 4%; padding-right: 5%" ng-repeat="type in result" class="global-row">
+            <div ng-show='type.value != null' style="margin-top: 5%;" class="item item-divider ">
+                    {{type.value | translate}}
+            </div>
+
+            <div ng-show='type.value != null' class="title-global" style=" height: 3px;"> </div>
+
+            <a ng-show='type.name != null'  ng-switch on='type.classification'  ng-click="details(type.idE,type.searchable);" class="item instrument-row global" on-hold='showDetails(type.idE,type.idI,type.name,type.available[0].amount,type.classification,type.payable,type.payer,type.searchable)' ng-if="!$last">
+                <div ng-switch-when="account" class="instrument-icon">
+                    <img ng-if="existCss == 'NO'" ng-src="resources/account.png" />
+                    <img ng-if="existCss == 'YES'" ng-src="{{ externalDirectory }}resources/account.png" />
+                </div>
+                <div ng-switch-when="loan" class="instrument-icon">
+                    <img ng-if="existCss == 'NO'" ng-src="resources/loan.png" />
+                    <img ng-if="existCss == 'YES'" ng-src="{{ externalDirectory }}resources/loan.png" />
+                </div>
+                <div ng-switch-when="credit-card" class="instrument-icon">
+                    <img ng-if="existCss == 'NO'" ng-src="resources/credit-card.png" />
+                    <img ng-if="existCss == 'YES'" ng-src="{{ externalDirectory }}resources/credit-card.png" />
+                </div>
+                <div ng-switch-when="deposit" class="instrument-icon">
+                    <img ng-if="existCss == 'NO'" ng-src="resources/other-instrument.png" />
+                    <img ng-if="existCss == 'YES'" ng-src="{{ externalDirectory }}resources/other-instrument.png" />
+                </div>
+                <div ng-switch-when="credit-line" class="instrument-icon">
+                    <img ng-if="existCss == 'NO'" ng-src="resources/other-instrument.png" />
+                    <img ng-if="existCss == 'YES'" ng-src="{{ externalDirectory }}resources/other-instrument.png" />
+                </div>
+                <div ng-switch-default class="instrument-icon">
+                    <img ng-if="existCss == 'NO'" ng-src="resources/other-instrument.png" />
+                    <img ng-if="existCss == 'YES'" ng-src="{{ externalDirectory }}resources/other-instrument.png" />
+                </div>
+                <h5 class="first-h5">{{ type.name }} {{ type.idI }} </h5>     <h5 class="second-h5"><strong> {{ type.available[0].amount }}</strong></h5> <h6 class="first-h6">{{ type.currency }}.</h6>
+                <div class="icon-searchable">
+                    <img ng-show='type.searchable == true' class="icon consultar" />
+                </div>
+            </a>
+
+            <a ng-show='type.name != null'  ng-switch on='type.classification'  ng-click="details(type.idE,type.searchable);" class="item instrument-row global-last" on-hold='showDetails(type.idE,type.idI,type.name,type.available[0].amount,type.classification,type.payable,type.payer,type.searchable)' ng-if="$last">
+                <div ng-switch-when="account" class="instrument-icon">
+                    <img ng-if="existCss == 'NO'" ng-src="resources/account.png" />
+                    <img ng-if="existCss == 'YES'" ng-src="{{ externalDirectory }}resources/account.png" />
+                </div>
+                <div ng-switch-when="loan" class="instrument-icon">
+                    <img ng-if="existCss == 'NO'" ng-src="resources/loan.png" />
+                    <img ng-if="existCss == 'YES'" ng-src="{{ externalDirectory }}resources/loan.png" />
+                </div>
+                <div ng-switch-when="credit-card" class="instrument-icon">
+                    <img ng-if="existCss == 'NO'" ng-src="resources/credit-card.png" />
+                    <img ng-if="existCss == 'YES'" ng-src="{{ externalDirectory }}resources/credit-card.png" />
+                </div>
+                <div ng-switch-when="deposit" class="instrument-icon">
+                    <img ng-if="existCss == 'NO'" ng-src="resources/other-instrument.png" />
+                    <img ng-if="existCss == 'YES'" ng-src="{{ externalDirectory }}resources/other-instrument.png" />
+                </div>
+                <div ng-switch-when="credit-line" class="instrument-icon">
+                    <img ng-if="existCss == 'NO'" ng-src="resources/other-instrument.png" />
+                    <img ng-if="existCss == 'YES'" ng-src="{{ externalDirectory }}resources/other-instrument.png" />
+                </div>
+                <div ng-switch-default class="instrument-icon">
+                    <img ng-if="existCss == 'NO'" ng-src="resources/other-instrument.png" />
+                    <img ng-if="existCss == 'YES'" ng-src="{{ externalDirectory }}resources/other-instrument.png" />
+                </div>
+                <h5 class="first-h5">{{ type.name }} {{ type.idI }} </h5>     <h5 class="second-h5"><strong> {{ type.available[0].amount }}</strong></h5> <h6 class="first-h6">{{ type.currency }}.</h6>
+                <div class="icon-searchable">
+                    <img ng-show='type.searchable == true' class="icon consultar" />
+                </div>
+            </a>
+        </div>
+        -->
+
+        <div style="padding-left: 4%; padding-right: 5%" ng-repeat="(classification, instruments) in instsByClass" class="global-row">
+            <div style="margin-top: 5%;" class="item item-divider global-first">
+                {{classification | translate}}
+                <div class="title-global" style=" height: 3px;"></div>
+            </div>
+
+            <div ng-repeat="inst in instruments">
+                <a ng-click="details(inst.idE,inst.searchable);" class="item instrument-row global" on-hold='showDetails(inst.idE,inst.idI,inst.name,inst.available[0].amount,inst.classification,inst.payable,inst.payer,inst.searchable)' ng-if="!$last">
+                    <div ng-if="inst.classification == 'account'" class="instrument-icon">
+                        <img ng-if="existCss == 'NO'" ng-src="resources/account.png" />
+                        <img ng-if="existCss == 'YES'" ng-src="{{ externalDirectory }}resources/account.png" />
+                    </div>
+                    <div ng-if="inst.classification == 'loan'" class="instrument-icon">
+                        <img ng-if="existCss == 'NO'" ng-src="resources/loan.png" />
+                        <img ng-if="existCss == 'YES'" ng-src="{{ externalDirectory }}resources/loan.png" />
+                    </div>
+                    <div ng-if="inst.classification == 'credit-card'" class="instrument-icon">
+                        <img ng-if="existCss == 'NO'" ng-src="resources/credit-card.png" />
+                        <img ng-if="existCss == 'YES'" ng-src="{{ externalDirectory }}resources/credit-card.png" />
+                    </div>
+                    <div ng-if="inst.classification == 'deposit'" class="instrument-icon">
+                        <img ng-if="existCss == 'NO'" ng-src="resources/other-instrument.png" />
+                        <img ng-if="existCss == 'YES'" ng-src="{{ externalDirectory }}resources/other-instrument.png" />
+                    </div>
+                    <div ng-if="inst.classification == 'credit-line'" class="instrument-icon">
+                        <img ng-if="existCss == 'NO'" ng-src="resources/other-instrument.png" />
+                        <img ng-if="existCss == 'YES'" ng-src="{{ externalDirectory }}resources/other-instrument.png" />
+                    </div>
+                    <div ng-if="inst.classification == 'other'" class="instrument-icon">
+                        <img ng-if="existCss == 'NO'" ng-src="resources/other-instrument.png" />
+                        <img ng-if="existCss == 'YES'" ng-src="{{ externalDirectory }}resources/other-instrument.png" />
+                    </div>
+                    <h5 class="first-h5">{{ inst.name }} {{ inst.idI }} </h5>     <h5 class="second-h5"><strong> {{ inst.available[0].amount }}</strong></h5> <h6 class="first-h6">{{ inst.currency }}.</h6>
+                    <div class="icon-searchable">
+                        <img ng-show='inst.searchable == true' class="icon consultar" />
+                    </div>
+                </a>
+            </div>
+
+            <div ng-repeat="inst in instruments">
+                <a ng-click="details(inst.idE,inst.searchable);" class="item instrument-row global-last" on-hold='showDetails(inst.idE,inst.idI,inst.name,inst.available[0].amount,inst.classification,inst.payable,inst.payer,inst.searchable)' ng-if="$last">
+                    <div ng-if="inst.classification == 'account'" class="instrument-icon">
+                        <img ng-if="existCss == 'NO'" ng-src="resources/account.png" />
+                        <img ng-if="existCss == 'YES'" ng-src="{{ externalDirectory }}resources/account.png" />
+                    </div>
+                    <div ng-if="inst.classification == 'loan'" class="instrument-icon">
+                        <img ng-if="existCss == 'NO'" ng-src="resources/loan.png" />
+                        <img ng-if="existCss == 'YES'" ng-src="{{ externalDirectory }}resources/loan.png" />
+                    </div>
+                    <div ng-if="inst.classification == 'credit-card'" class="instrument-icon">
+                        <img ng-if="existCss == 'NO'" ng-src="resources/credit-card.png" />
+                        <img ng-if="existCss == 'YES'" ng-src="{{ externalDirectory }}resources/credit-card.png" />
+                    </div>
+                    <div ng-if="inst.classification == 'deposit'" class="instrument-icon">
+                        <img ng-if="existCss == 'NO'" ng-src="resources/other-instrument.png" />
+                        <img ng-if="existCss == 'YES'" ng-src="{{ externalDirectory }}resources/other-instrument.png" />
+                    </div>
+                    <div ng-if="inst.classification == 'credit-line'" class="instrument-icon">
+                        <img ng-if="existCss == 'NO'" ng-src="resources/other-instrument.png" />
+                        <img ng-if="existCss == 'YES'" ng-src="{{ externalDirectory }}resources/other-instrument.png" />
+                    </div>
+                    <div ng-if="inst.classification == 'other'" class="instrument-icon">
+                        <img ng-if="existCss == 'NO'" ng-src="resources/other-instrument.png" />
+                        <img ng-if="existCss == 'YES'" ng-src="{{ externalDirectory }}resources/other-instrument.png" />
+                    </div>
+                    <h5 class="first-h5">{{ inst.name }} {{ inst.idI }} </h5>     <h5 class="second-h5"><strong> {{ inst.available[0].amount }}</strong></h5> <h6 class="first-h6">{{ inst.currency }}.</h6>
+                    <div class="icon-searchable">
+                        <img ng-show='inst.searchable == true' class="icon consultar" />
+                    </div>
+                </a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

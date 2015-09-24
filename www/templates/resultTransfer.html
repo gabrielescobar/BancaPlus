@@ -1,0 +1,35 @@
+<ion-view title="{{'tranfandpayment' | translate}}">
+    <ion-content ng-controller="transferResultController" padding="true" class="has-header login">
+
+        <div class="origin-account" style="margin-left: 3.7%;margin-right: 3.7%;margin-top: 5%; margin-bottom: -6.6%;">
+            {{'resulttransfer' | translate}}
+        </div>
+        <div class="card" style=" margin-left: 5%;margin-right: 5%;">
+            <div class="item item-text-wrap" ng-repeat="item in val.transactionOutput">
+                <img ng-if="(existCss == 'NO') && (item.status.code =='OK')" ng-src="resources/transfer-success.png" />
+                <img ng-if="(existCss == 'YES') && (item.status.code =='OK') " ng-src="{{ externalDirectory }}resources/transfer-success.png" />
+
+                <img ng-if="(existCss == 'NO') && (item.status.code !='OK')" ng-src="resources/transfer-error.png" />
+                <img ng-if="(existCss == 'YES') && (item.status.code !='OK')" ng-src="{{ externalDirectory }}resources/transfer-error.png" />
+                <span class="transfer-name">{{transactions[$index]}}</span>
+                <br />
+                <span class="transfer-amount">{{item.op.payment.currency}}  {{item.op.payment.amount}}</span>
+                <br />
+
+                <div style="color: green" ng-if="item.status.code =='OK'" class="reference-transfer">{{'reference' | translate}}:  {{item.ref}}</div>
+                <div style="color: red" ng-if="item.status.code !='OK'">{{item.status.msg}}</div>
+                <div class="share" ng-click="share('Se realizó una transferencia a ' + transactions[$index] + ' por un monto de ' + item.op.payment.amount + ' y número de referencia ' + item.ref)">
+                    {{'share' | translate}}
+                    <img ng-if="existCss == 'NO'" ng-src="resources/share.png" />
+                    <img ng-if="existCss == 'YES'" ng-src="{{ externalDirectory }}resources/share.png" />
+                </div>
+                <div class="title-global_transfer"></div>
+            </div>
+        </div>
+
+        <button class="button button-block button-positive" style="width: 40%;margin: 0 auto;"  ng-click="confirm()">
+            {{'continue' | translate}}
+        </button>
+    </ion-content>
+
+</ion-view>

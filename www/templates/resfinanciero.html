@@ -1,0 +1,15 @@
+<ion-view id="details-view" title="Resumen financiero">
+    <ion-content padding="true" id="details-backg">
+        <div id="res1-banner">
+            <a href="{{ banner.url }}">
+                <img ng-src="resources/{{ banner.name }}" ng-if="banner.startDate < currentDate && currentDate < banner.endDate" />
+            </a>
+        </div>
+
+        <ion-list class="dashboard-list" id="dash1-listD1" ng-repeat="instrument in listRes">
+            <ion-item class="item-thumbnail-left" on-hold="showOptions({{ instrument.payable }}, {{ instrument.payer }}, 9087)">
+                {{ instrument.name }} {{ instrument.internalId }}
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

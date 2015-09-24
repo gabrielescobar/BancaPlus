@@ -1,0 +1,28 @@
+<ion-view id="calendar-view" title="Fechas importantes">
+    <ion-content padding="true" id="calendar-backg" ng-controller="calendarController" class="has-header calendar">
+        <div class="calendar-container">
+            <div class="movement-header header-calendar">
+                {{ month }}
+            </div>
+            <div class="calendar-table">
+                <table>
+                    <tr ng-repeat="row in calendarDays">
+                        <td ng-repeat="col in row">
+                            <span ng-if="lastPDate == col" class="lastPDate">{{ col }}</span>
+                            <span ng-if="nextPDate == col" class="nextPDate">{{ col }}</span>
+                            <span ng-if="nextPDate != col && lastPDate != col">{{ col }}</span>
+                        </td>
+                    </tr>
+                </table>
+                <div class="calendar-legend" ng-switch on='existCss'>
+                    <img ng-switch-when="NO" ng-src="resources/last-payment.png" />
+                    <img ng-switch-when="YES" ng-src="{{ externalDirectory }}resources/last-payment.png" />
+                    <span>{{'last-payment' | translate }}</span>
+                    <img ng-switch-when="NO" ng-src="resources/next-payment.png" />
+                    <img ng-switch-when="YES" ng-src="{{ externalDirectory }}resources/next-payment.png" />
+                    <span>{{'next-payment' | translate }}</span>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

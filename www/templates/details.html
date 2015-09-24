@@ -1,0 +1,189 @@
+<ion-view id="details-view" title="{{'details' | translate}}">
+    <ion-content padding="true" id="details-backg" ng-controller="detailsCtrl" class="has-header details">
+
+        <div id="cons1-banner" ui-sref="transfer">
+
+            <div class="banner-cons1" ng-if="bannerTrue">
+                <img ng-if="existCss == 'NO'" ng-src="resources/banner-bancaplus.gif" />
+                <img ng-if="existCss == 'YES'" ng-src="{{ externalDirectory }}resources/banner-bancaplus.gif" />
+            </div>
+        </div>
+
+        <div class="details-amounts">
+            <div class="details-first">
+                <select ng-options="inst.idE as inst.name for inst in instruments" ng-model="inst" ng-change="changeInstrument(inst)">
+                </select>
+            </div>
+
+            <div class="details-row" ng-repeat="field in detailsObject.listShowFields.dates">
+                <div class="details-middle" ng-if="$first">
+                    <span ng-repeat="(key, value) in field">
+                        <div class="details-amount-type">{{ key | translate}}</div>
+                        <div class="details-amount-value"><span class="bs-amount">{{ value }}</span></div>
+                    </span>
+                    <div class="details-separator"></div>
+                </div>
+
+                <div class="details-middle" ng-if="$middle">
+                    <span ng-repeat="(key, value) in field">
+                        <div class="details-amount-type">{{ key | translate}}</div>
+                        <div class="details-amount-value"><span class="bs-amount">{{ value }}</span></div>
+                    </span>
+                    <div class="details-separator"></div>
+                </div>
+
+                <div class="details-middle" ng-if="$last">
+                    <span ng-repeat="(key, value) in field">
+                        <div class="details-amount-type">{{ key | translate}}</div>
+                        <div class="details-amount-value"><span class="bs-amount">{{ value }}</span></div>
+                    </span>
+                    <div class="details-separator"></div>
+                </div>
+            </div>
+
+            <div class="details-row" ng-repeat="field in detailsObject.listShowFields.others">
+                <div class="details-middle" ng-if="$first">
+                    <span ng-repeat="(key, value) in field">
+                        <div class="details-amount-type">{{ key | translate}}</div>
+                        <div class="details-amount-value"><span class="bs-amount">{{ value }}</span></div>
+                    </span>
+                    <div class="details-separator"></div>
+                </div>
+
+                <div class="details-middle" ng-if="$middle">
+                    <span ng-repeat="(key, value) in field">
+                        <div class="details-amount-type">{{ key | translate}}</div>
+                        <div class="details-amount-value"><span class="bs-amount">{{ value }}</span></div>
+                    </span>
+                    <div class="details-separator"></div>
+                </div>
+
+                <div class="details-middle" ng-if="$last">
+                    <span ng-repeat="(key, value) in field">
+                        <div class="details-amount-type">{{ key | translate}}</div>
+                        <div class="details-amount-value"><span class="bs-amount">{{ value }}</span></div>
+                    </span>
+                    <div class="details-separator"></div>
+                </div>
+            </div>
+
+            <div class="details-row" ng-repeat="field in detailsObject.listShowFields.amounts">
+                <div class="details-middle" ng-if="$first">
+                    <span ng-repeat="(key, value) in field">
+                        <div class="details-amount-type">{{ key | translate}}</div>
+                        <div class="details-amount-value"><span class="bs">{{ currency }}</span> <span class="bs-amount">{{ value }}</span></div>
+                    </span>
+                    <div class="details-separator"></div>
+                </div>
+
+                <div class="details-middle" ng-if="$middle">
+                    <span ng-repeat="(key, value) in field">
+                        <div class="details-amount-type">{{ key | translate }}</div>
+                        <div class="details-amount-value"><span class="bs">{{ currency }}</span> <span class="bs-amount">{{ value }}</span></div>
+                    </span>
+                    <div class="details-separator"></div>
+                </div>
+
+                <div class="details-last" ng-if="$last">
+                    <span ng-repeat="(key, value) in field">
+                        <div class="details-amount-type">{{ key | translate}}</div>
+                        <div class="details-amount-value"><span class="bs">{{ currency }}</span> <span class="bs-amount">{{ value }}</span></div>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div ng-if="classification == 'credit-card'" class="amount-graphic">
+            <div class="div-amount">
+                <span class="title">{{'creditLimit' | translate}}</span>
+                <span class="bs">{{ currency }}</span>
+                <span class="bs-amount">{{ detailsObject.creditLimit[0].amount }}</span>
+            </div>
+
+            <div class="div-circles">
+                <div class="graphic-container-first" style="width: {{ detailsObject.graphicBlue }}%;">
+                    <div class="graphic-bar-blue"></div>
+                </div>
+
+                <div class="graphic-container-second" style="width: {{ detailsObject.graphicGrey }}%;">
+                    <div class="graphic-bar-grey"></div>
+                </div>
+                <div class="clear"></div>
+
+                <div class="graphic-circles" ng-switch on='existCss'>
+                    <img ng-switch-when="NO" ng-src="resources/circle-blue.png" />
+                    <img ng-switch-when="YES" ng-src="{{ externalDirectory }}resources/circle-blue.png" />
+                    <span class="title">{{'balanceDue' | translate}}</span>
+
+                    <img ng-switch-when="NO" src="resources/circle-grey.png" />
+                    <img ng-switch-when="YES" src="{{ externalDirectory }}resources/circle-grey.png" />
+                    <span class="title">{{'available' | translate}}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="fechas-importantes" ng-if="classification == 'credit-card'" ng-click="calendar()" ng-switch on='existCss'>
+            <img ng-switch-when="NO" ng-src="resources/fechas-importantes.png" />
+            <img ng-switch-when="YES" ng-src="{{ externalDirectory }}resources/fechas-importantes.png" />
+            <span class="fechas">{{'important-dates' | translate}}</span>
+            <img ng-switch-when="NO" ng-src="resources/flecha-verde.png" class="fechas-flecha" />
+            <img ng-switch-when="YES" ng-src="{{ externalDirectory }}resources/flecha-verde.png" class="fechas-flecha" />
+        </div>
+
+        <div class="centered-transfer" ng-if="details.payer || details.payable">
+            <button class="button button-positive" ng-click="showDetails(details.idE, details.idI, details.name, details.available[0].amount, details.classification, details.payable, details.payer, false)">
+                {{'transfer' | translate}}
+            </button>
+        </div>
+
+
+        <div class="details-movements" ng-if="detailsObject.movements">
+            <div class="movement-header">
+                <select ng-options="date.name for date in possibleDates" ng-model="date" ng-change="changeMovements(date)">
+                </select>
+            </div>
+
+            <div class="details-row-mov details-middle-mov" ng-repeat="movement in detailsObject.movements" ng-if="!$last">
+                <div class="details-mov-date">
+                    <img ng-if="(movement.type == 'DB') && (existCss == 'YES')" ng-src="{{ externalDirectory }}resources/{{ days[movement.dayWeek] }}.png" />
+                    <img ng-if="(movement.type == 'CR') && (existCss == 'YES')" ng-src="{{ externalDirectory }}resources/{{ days[movement.dayWeek] }}V.png" />
+
+                    <img ng-if="(movement.type == 'DB') && (existCss == 'NO')" ng-src="resources/{{ days[movement.dayWeek] }}.png" />
+                    <img ng-if="(movement.type == 'CR') && (existCss == 'NO')" ng-src="resources/{{ days[movement.dayWeek] }}V.png" />
+                    <span>{{ movement.dayMonth }}</span>
+                </div>
+                <div class="details-mov-desc">
+                    <div>
+                        <div class="mov-desc-first">{{ movement.desc }}</div>
+                        <div class="mov-desc-second">{{ movement.refNum }}</div>
+                    </div>
+                </div>
+
+                <div class="details-mov-amount red" ng-if="movement.type == 'DB'"><span class="bs">{{ currency }}</span> <span class="bs-amount">{{ movement.payment[0].amount }}</span></div>
+                <div class="details-mov-amount green" ng-if="movement.type == 'CR'"><span class="bs">{{ currency }}</span> <span class="bs-amount">{{ movement.payment[0].amount }}</span></div>
+                <div class="details-separator"></div>
+            </div>
+
+            <div class="details-row-mov details-last-mov" ng-repeat="movement in detailsObject.movements" ng-if="$last">
+                <div class="details-mov-date">
+                    <img ng-if="(movement.type == 'DB') && (existCss == 'YES')" ng-src="{{ externalDirectory }}resources/{{ days[movement.dayWeek] }}.png" />
+                    <img ng-if="(movement.type == 'CR') && (existCss == 'YES')" ng-src="{{ externalDirectory }}resources/{{ days[movement.dayWeek] }}V.png" />
+
+                    <img ng-if="(movement.type == 'DB') && (existCss == 'NO')" ng-src="resources/{{ days[movement.dayWeek] }}.png" />
+                    <img ng-if="(movement.type == 'CR') && (existCss == 'NO')" ng-src="resources/{{ days[movement.dayWeek] }}V.png" />
+                    <span>{{ movement.dayMonth }}</span>
+                </div>
+                <div class="details-mov-desc">
+                    <div>
+                        <div class="mov-desc-first">{{ movement.desc }}</div>
+                        <div class="mov-desc-second">{{ movement.refNum }}</div>
+                    </div>
+                </div>
+
+                <div class="details-mov-amount red" ng-if="movement.type == 'DB'"><span class="bs">{{ currency }}</span> <span class="bs-amount">{{ movement.payment[0].amount }}</span></div>
+                <div class="details-mov-amount green" ng-if="movement.type == 'CR'"><span class="bs">{{ currency }}</span> <span class="bs-amount">{{ movement.payment[0].amount }}</span></div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

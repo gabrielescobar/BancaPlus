@@ -1,0 +1,44 @@
+<ion-view title="{{'dashboard' | translate}}">
+    <ion-content padding="true" class="has-header dashboard-content" id="dash1-backg">
+
+
+        <div class="dashboard-all">
+            <ion-list class="dashboard-list" id="dash1-listD1" ng-repeat="dash in listDash">
+                <ion-item class="item-thumbnail-left dashboard-list-element" ng-class-odd="'element-odd'" ng-class-even="'element-even'">
+                    <div class="relative">
+                        <a ng-if="dash.type == 'APL'" ui-sref="languages.login">
+                            <img ng-if="existCss == 'NO'" ng-src="resources/{{ dash.image }}" />
+                            <img ng-if="existCss == 'YES'" ng-src="{{ externalDirectory }}resources/{{ dash.image }}" />
+                        </a>
+                        <a ng-if="dash.type == 'WEB'" ui-sref="eventmenu.ubicanos">
+                            <img ng-if="existCss == 'NO'" ng-src="resources/{{ dash.image }}" />
+                            <img ng-if="existCss == 'YES'" ng-src="{{ externalDirectory }}resources/{{ dash.image }}" />
+                        </a>
+                        <a ng-if="dash.type == 'MSJ'" ng-click="showMessage(dash)">
+                            <img ng-if="existCss == 'NO'" ng-src="resources/{{ dash.image }}" />
+                            <img ng-if="existCss == 'YES'" ng-src="{{ externalDirectory }}resources/{{ dash.image }}" />
+                        </a>
+                        <a ng-if="dash.type == 'FUN'" ui-sref="eventmenu.contact">
+                            <img ng-if="existCss == 'NO'" ng-src="resources/{{ dash.image }}" />
+                            <img ng-if="existCss == 'YES'" ng-src="{{ externalDirectory }}resources/{{ dash.image }}" />
+                        </a>
+                        <div>
+                            <div>
+                                <h2>
+                                    <a ng-if="dash.type == 'APL'" ui-sref="languages.login"> {{ dash.title }} </a>
+                                    <a ng-if="dash.type == 'WEB'" ui-sref="eventmenu.ubicanos"> {{ dash.title }} </a>
+                                    <a ng-if="dash.type == 'MSJ'" ng-click="showMessage(dash)"> {{ dash.title }} </a>
+                                    <a ng-if="dash.type == 'FUN'" ui-sref="eventmenu.contact"> {{ dash.title }} </a>
+                                </h2>
+                                <p ng-if="dash.type == 'APL'" ui-sref="languages.login"> {{ dash.description }} </p>
+                                <p ng-if="dash.type == 'WEB'" ui-sref="eventmenu.ubicanos"> {{ dash.description }} </p>
+                                <p ng-if="dash.type == 'MSJ'" ng-click="showMessage(dash)"> {{ dash.description }} </p>
+                                <p ng-if="dash.type == 'FUN'" ui-sref="eventmenu.contact"> {{ dash.description }} </p>
+                            </div>
+                        </div>
+                    </div>
+                </ion-item>
+            </ion-list>
+        </div>
+    </ion-content>
+</ion-view>

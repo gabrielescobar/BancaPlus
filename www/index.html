@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width, target-densityDpi=device-dpi" />
+    <title></title>
+
+    <style>
+      .angular-google-map-container {
+          width: 100%;
+          height: 504px;
+      }
+    </style>
+
+    <link href="/css/preview-frame.css" rel="stylesheet">
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+      <link href="css/style.css" rel="stylesheet">
+      <link href="css/own.css" rel="stylesheet">
+    <!-- ionic/angularjs js -->
+      <script src="lib/ionic/js/ionic.bundle.js"></script>
+      <script src="lib/angular-translate/angular-translate.js"></script>
+      <script src="lib/angular-cookies/angular-cookies.js"></script>
+      <script src="lib/angular-i18n/angular-locale_es-ve.js"></script>
+      <script src="lib/angular-currency-filter/src/currency-filter.js"></script>
+      <script src="lib/angular-google-maps/dist/angular-google-maps.js"></script>
+      <script src="lib/lodash/dist/lodash.js"></script>
+
+      <!-- jquery js/other -->
+      <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
+      <script src="lib/jquery/dist/jquery.js"></script>
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+      <!-- cordova script (this will be a 404 during development) -->
+      <script src="cordova.js"></script>
+      <script src="../node_modules/requirejs/require.js"></script>
+      <!-- your app's js -->
+      <script src="js/loginController.js"></script>
+      <script src="js/actionBarcontroller.js"></script>
+      <script src="js/globalController.js"></script>
+      <script src="js/termsController.js"></script>
+      <script src="js/dashboardController.js"></script>
+      <script src="js/detailsController.js"></script>
+      <script src="js/localStoragefactory.js"></script>
+      <script src="js/transferController.js"></script>
+      <script src="js/transferAmountcontroller.js"></script>
+      <script src="js/transferConfirmcontroller.js"></script>
+      <script src="js/transferResultcontroller.js"></script>
+      <script src="js/internationalization.js"></script>
+      <script src="js/geolocationController.js"></script>
+      <script src="js/geoDetailsController.js"></script>
+      <script src="js/calendarController.js"></script>
+      <script src="js/contactController.js"></script>
+      <script src="js/otpController.js"></script>
+      <script src="js/app.js"></script>
+      <script src="js/services.js"></script>
+      <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+      <script src="js/sha1_file.js"></script>
+
+  </head>
+  <body ng-app="app" animation="slide-left-right-ios7">
+    <div>
+        <ion-nav-view></ion-nav-view>
+    </div>
+  </body>
+</html>

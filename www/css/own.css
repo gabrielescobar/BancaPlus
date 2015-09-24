@@ -1,0 +1,1069 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+.scroll {
+    padding: 0;
+}
+
+.logo-login {
+    text-align: left !important;
+    background: transparent !important;
+    border: none !important;
+    line-height: 0 !important;
+    padding-top: 5% !important;
+    padding-bottom: 5% !important;
+}
+
+.logo-login img {
+    position: relative;
+    left: 10%;
+}
+
+
+/*********    Estilos del Dashboard    *********/
+.dashboard-list-element h2, .dashboard-list-element p {
+    color: #111557 !important;
+}
+
+
+.dashboard-list-element p {
+    white-space: pre-line;
+}
+
+.dashboard-list-element h2 {
+    font-weight: bold;
+    display: inline;
+}
+
+.dashboard-list-element {
+    padding-left: 2%;
+}
+
+.dashboard-list-element div {
+    display: inline;
+    vertical-align: super;
+}
+
+.dashboard-list-element a {
+    text-decoration: none;
+}
+
+.dashboard-list-element img {
+    vertical-align: baseline;
+}
+
+.dashboard-all {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    top: 24%;
+}
+
+.dashboard-content {
+    background: url("../resources/dashboard-background.png") no-repeat center center fixed !important;
+    background-size: 100%;
+    -webkit-background-size: cover !important;
+    -moz-background-size: cover !important;
+    -o-background-size: cover !important;
+    background-size: cover !important;
+}
+
+.dashboard-list .list {
+    width: 80%;
+}
+
+.element-odd {
+    opacity: 0.8;
+}
+
+.element-even {
+    opacity: 0.6;
+}
+
+ion-content .scroll {
+    padding-left: 0;
+    padding-bottom: 0;
+}
+
+.nav-bar-dashboard ion-header-bar {
+    height: 0;
+}
+
+.contact-subheader {
+    color: #3a8bf6;
+    font-size: 1.6em;
+    font-weight: bold;
+    border-bottom: solid 3px #3a8bf6;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding: 5% 0 5% 3%;
+    background-color: #ffffff;
+}
+
+.contactenos-list p {
+    color: #666 !important;
+    text-align: left;
+    position: relative;
+    top: 35%;
+}
+
+.contactenos-list a {
+    vertical-align: sub;
+}
+
+.contactenos-list h2 {
+    color: #111557 !important;
+    font-weight: bold;
+    display: inline;
+    position: relative;
+    top: 35%;
+    font-size: 1.2em;
+}
+
+.contactenos-list img {
+    vertical-align: bottom;
+}
+
+.contactenos-list div {
+    text-align: left;
+    position: relative;
+}
+
+.header-item {
+    background: #111557;
+    color: #ffffff !important;
+    font-size: 1.6em;
+}
+
+ion-header-bar .header-item {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
+.contact-separator {
+    border-bottom: solid 1px #b7b6b6;
+    margin-right: 1%;
+}
+
+.contactenos-list {
+    padding: 3% 0 3% 3%;
+    text-align: center;
+    margin-left: 2%;
+    margin-right: 2%;
+    background-color: #ffffff;
+}
+
+div.social-info {
+    display: inline;
+    height: 100%;
+    margin-left: 2%;
+}
+
+div.social-info h2 {
+    vertical-align: super;
+}
+
+.p-contact {
+    white-space: pre-line;
+}
+
+ion-header-bar .title {
+    left: 0 !important;
+    right: 0 !important;
+}
+
+div.relative {
+    position: relative !important;
+}
+
+div.absolute {
+    position: absolute !important;
+    display: inline;
+    height: 100%;
+    margin-left: 2%;
+}
+
+div.absolute div {
+    position: relative;
+    top: 25%;
+}
+
+div.absolute h2, div.absolute p {
+    color: #111557;
+}
+
+div.absolute h2 {
+    font-weight: bold;
+}
+
+/************       Estilos de los detalles       **************/
+.banner-cons1 {
+    text-align: center;
+}
+
+.details-amounts-container {
+    padding: 0;
+}
+
+.details-amounts select {
+    width: 100%;
+    background: url("../resources/list-green.png") no-repeat 98% center #ffffff;
+    background-size: 4%;
+    color: #111557;
+    font-weight: bold;
+    padding: 1% 2%;
+    font-size: 1em;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.details-first {
+    padding: 2% 2% 2% 2%;
+    background: url("../resources/det-first-row.png") no-repeat 0 0;
+    background-size: 100%;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.details-first select {
+    padding-bottom: 0;
+    height: 26px;
+}
+
+.item-thumbnail-left {
+    border: none;
+}
+
+.details-amount-type {
+    width: 60%;
+    padding: 1% 0 1% 3%;
+    margin-left: 0;
+    margin-right: 0;
+    border: none;
+    display: inline;
+    float: left;
+    font-size: 0.8em;
+}
+
+.details-amount-value {
+    width: 40%;
+    padding: 1% 3% 1% 0;
+    margin-left: 0;
+    margin-right: 0;
+    border: none;
+    display: inline;
+    float: left;
+    text-align: right;
+    color: #3a8bf6;
+}
+
+.details-separator {
+    background: url('../resources/Artboard-84.png') no-repeat center;
+    background-size: 100%;
+    align-content: center;
+    margin-left: 6%;
+    margin-right: 6%;
+    clear: both;
+    height: 4px;
+}
+
+.details-last {
+    background: url("../resources/det-last-row.png") no-repeat center;
+    padding: 1% 0 3% 0;
+    overflow: hidden;
+    background-size: 100%;
+}
+
+.details-amounts {
+    padding-left: 4%;
+    padding-right: 4%;
+    margin-top: 4%;
+}
+
+.details-middle {
+    background: url("../resources/sergment.png") no-repeat center;
+    padding: 1% 0;
+    background-size: 100%;
+}
+
+.details-movements {
+    margin: 6% 4%;
+}
+
+.movement-header {
+    background: url("../resources/movement-header.png") no-repeat 0 0;
+    background-size: 100%;
+    padding-left: 1%;
+    padding-right: 1%;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.movement-header select {
+    width: 100%;
+    background: #111557;
+    font-weight: bold;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url("../resources/list-white.png") no-repeat 98% center transparent;
+    color: #ffffff;
+}
+
+.movement-header option {
+    color: #000000;
+}
+
+.details-mov-date {
+    width: 15%;
+    padding: 3% 2% 1% 4%;
+    margin-left: 0;
+    margin-right: 0;
+    border: none;
+    display: inline;
+    float: left;
+    text-align: left;
+    position: relative;
+}
+
+.details-mov-date span {
+    position: absolute;
+    font-size: 1.3em;
+    left: 40%;
+    top: 34%;
+    font-weight: bold;
+}
+
+.details-mov-desc {
+    width: 43%;
+    padding: 1% 0 1% 0;
+    margin-left: 0;
+    margin-right: 0;
+    border: none;
+    display: inline;
+    float: left;
+    text-align: left;
+}
+
+.details-mov-amount {
+    width: 37%;
+    padding: 1% 0;
+    margin-left: 0;
+    margin-right: 0;
+    border: none;
+    display: inline;
+    float: left;
+    text-align: right;
+    font-size: 100%;
+}
+
+.bs {
+    font-size: 0.5em;
+}
+
+.bs-amount {
+    font-size: 0.8em;
+}
+
+.red {
+    color: #e51f57;
+}
+
+.green {
+    color: #68a82d;
+}
+
+.mov-desc-first {
+    font-size: 0.6em;
+}
+
+.mov-desc-second {
+    font-size: 0.5em;
+}
+
+.disabled {
+    color: #666666;
+}
+
+.details-row-mov {
+    clear: both;
+    background-color: #ffffff;
+}
+
+.details-middle-mov {
+    background: url("../resources/sergment-movement.png") no-repeat center;
+    padding: 1% 0 0 0;
+    background-size: 100%;
+}
+
+.details-last-mov {
+    background: url("../resources/det-last-row-movement.png") no-repeat center;
+    padding: 1% 0 5% 0;
+    background-size: 100%;
+    margin-right: 1px;
+}
+
+.details-amount-value .bs {
+    font-size: 0.5em;
+    color: #000000;
+}
+
+.details-amount-value .bs-amount {
+    font-size: 0.8em;
+}
+
+.div-amount {
+    text-align: right;
+    padding-right: 3%;
+    padding-left: 3%;
+}
+
+.div-amount .title, .graphic-circles .title {
+    font-size: 0.8em;
+}
+
+.div-amount .bs-amount {
+    color: #3a8bf6;
+}
+
+.clear {
+    clear: both;
+}
+
+.graphic-container-first {
+    float: left;
+    padding-left: 3%;
+}
+
+.graphic-container-second {
+    float: left;
+}
+
+.graphic-bar-blue {
+    height: 15px;
+    background-color: #3a8bf6;
+}
+
+.graphic-bar-grey {
+    height: 15px;
+    background-color: #b7b6b6;
+}
+
+.graphic-circles {
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+.amount-graphic {
+    padding-top: 5%;
+    background-color: #ffffff;
+    margin-left: 4%;
+    margin-right: 4%;
+}
+
+.fechas-importantes {
+    background-color: #ffffff;
+    margin-left: 4%;
+    margin-right: 4%;
+    padding: 6% 3%;
+}
+
+.fechas-importantes img, .fechas-importantes span {
+    vertical-align: super;
+}
+
+.fechas-flecha {
+    float: right;
+}
+
+#cons1-banner {
+    margin-top: 3%;
+}
+
+#ubicanos-backg .angular-google-map-container {
+    height: 100vh;
+}
+
+#ubicanos-det-backg .angular-google-map-container {
+    height: 200px;
+}
+
+.gm-style {
+    height: 100% !important;
+}
+
+.geo-search {
+    padding: 4%;
+    background-color: #b7b6b6;
+}
+
+.geo-search-finder {
+    position: relative;
+}
+
+.geo-search-finder a {
+    position: absolute;
+    right: 3%;
+    top: 5px;
+}
+
+.geo-search-finder input {
+    width: 100%;
+    height: 24px;
+}
+
+.sucursal-details {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.sucursal-details h4 {
+    color: #3a8bf6;
+    font-weight: bold;
+}
+
+.sucursal-details h5 {
+    color: #111557;
+    font-weight: bold;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.sucursal-details .text {
+    color: #b7b6b6;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.blueline {
+    border: solid 1px #3a8bf6;
+}
+
+.greyline {
+    border: solid 1px #b7b6b6;
+}
+
+.lastPDate {
+    background: url("../resources/last-payment.png") no-repeat center;
+    background-size: 48%;
+}
+
+.nextPDate {
+    background: url("../resources/next-payment.png") no-repeat center;
+    background-size: 50%;
+}
+
+.calendar-table table {
+    width: 90%;
+    margin: 0 auto;
+    background: url("../resources/background-calendar.png") no-repeat left top;
+}
+
+.calendar-table table td {
+    text-align: center;
+}
+
+.calendar-table table td span {
+    display: block;
+}
+
+.calendar-legend {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 5% 0;
+    background: url("../resources/background-calendar-legend.png") no-repeat left top;
+}
+
+.calendar-legend img {
+    vertical-align: bottom;
+}
+
+.header-calendar {
+    width: 90%;
+    margin: 0 auto;
+    color: #ffffff;
+    padding-left: 5%;
+    padding-bottom: 0;
+}
+
+.calendar-container {
+    margin-top: 5%;
+}
+
+.centered-transfer {
+    text-align: center;
+    padding-top: 2%;
+}
+
+.centered {
+    text-align: center;
+}
+
+.sucursal-names span {
+    text-align: left;
+    display: block;
+}
+
+#map-canvas {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.sucursal-names img {
+    display: block;
+    margin: 0 auto;
+}
+
+.sucursal-names span {
+    hyphens: none;
+    -moz-hyphens: none;
+    -webkit-hyphens: none;
+}
+
+.scroll {
+    height: 100% !important;
+}
+
+.social-net {
+    vertical-align: super;
+}
+
+.social-net p {
+    display: inline;
+}
+
+.thumbnail-contact {
+    border-bottom: solid 2px #b7b6b6;
+}
+
+.double-arrow {
+    padding-top: 4%;
+}
+
+.double-arrow img {
+    width: 7%;
+    height: auto;
+}
+
+.centered-transfer button {
+    min-height: 35px !important;
+    line-height: 0 !important;
+    padding-top: 2% !important;
+    padding-bottom: 2% !important;
+}
+
+.details {
+    background: url('../resources/background-all.png') no-repeat center;
+    background-size: 100%;
+}
+
+.calendar {
+    background: url('../resources/background-all.png') no-repeat center;
+    background-size: 100%;
+}
+
+.contact {
+    background: url('../resources/background-all.png') no-repeat center;
+    background-size: 100%;
+}
+
+
+/***************             CSS DE GABRIEL             ****************/
+
+.login{
+    background: url('../resources/background-all.png') no-repeat center;
+    background-size: 100%;
+}
+
+.login-content {
+    background: url('../resources/background-login.png') no-repeat center;
+    background-size: 100%;
+}
+
+.global-first {
+    background: url("../resources/first.png") no-repeat 0 0;
+    background-size: 100%;
+    padding-left: 10%;
+    padding-top: 5%;
+    overflow: hidden;
+}
+
+.global{
+    background: url("../resources/sergment.png") no-repeat 0 0;
+    background-size: 100%;
+    padding: 1%;
+    padding-left: 10%;
+    padding-top: 3%;
+    color: white;
+    overflow: hidden;
+
+}
+
+.global-last{
+    background: url("../resources/final.png") no-repeat 0 0;
+    background-size: 100%;
+    padding: 1%;
+    padding-left: 10%;
+    padding-top: 3%;
+    padding-bottom: 7%;
+    color: white;
+    overflow: hidden;
+}
+
+.global-row a {
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+.consultar{
+    content: url('../resources/next.png') no-repeat center;
+}
+
+.cancel{
+    background: url('../resources/cancel.png') no-repeat center;
+}
+
+.accept{
+    background: url('../resources/accept.png') no-repeat center;
+}
+
+.origin-account {
+    background: url("../resources/origin-account.png") no-repeat 0 0;
+    background-size: 100%;
+    padding: 1%;
+    padding-left: 10%;
+    padding-top: 3%;
+    color: white;
+    overflow: hidden;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.description {
+    color: deepskyblue !important;
+    font-weight: bold;
+    padding-bottom: 3%;
+}
+
+.dest-account {
+    background: url("../resources/Artboard-83.png") no-repeat 0 0;
+    padding-left: 10%;
+    padding-top: 3%;
+    color: white;
+    overflow: hidden;
+    height: 5px;
+    margin-left: 4%;
+    margin-right: 4%;
+}
+
+.origin-field {
+    background: url("../resources/origin-field.png") no-repeat 0 0;
+    background-size: 99%;
+    padding: 5%;
+    padding-top: 0%;
+    padding-left: 0%;
+    padding-right: 0%;
+    margin-left: 2%;
+    margin-right: 1%;
+    overflow: hidden;
+}
+
+.banner{
+    background: url('../resources/banner-bancaplus.png') no-repeat center;
+    margin: 0 auto;
+}
+
+.button_bp{
+    background: url('../resources/button.png') no-repeat;
+    background-size: 100%;
+    align-content: center;
+}
+
+.logo{
+    /*
+    background: url('../resources/logo-login.png') no-repeat center;
+    */
+}
+
+.login_field{
+    background: url('../resources/login_field.png') no-repeat center;
+    background-size: 100%;
+    align-content: center;
+}
+
+.login_tittle{
+    background: url('../resources/login_tittle.png') no-repeat center;
+/*    background-size: 100%;    */
+    align-content: center;
+    padding: 3%;
+}
+
+.button-login {
+    background: url("../resources/button-login.png") center no-repeat;
+    background-size: 100%;
+    color: #ffffff;
+}
+
+.footer {
+    /*
+    background: url('../resources/footer.png') no-repeat left bottom;
+    */
+    color: #ffffff;
+    padding-top: 25%;
+}
+
+.footer div {
+    color: #ffffff;
+}
+
+.first_footer {
+    width: 30%;
+    float: left;
+    padding-left: 5%;
+    font-size: 0.8em;
+}
+
+.second_footer {
+    width: 60%;
+    float: right;
+    margin-right: 5%;
+}
+
+.user{
+    background: url('../resources/user.png') no-repeat center;
+    background-size: 100%;
+    align-content: center;
+    margin-bottom: 2%;
+}
+
+.button-clean {
+    background: url("../resources/button-login.png") no-repeat center;
+    background-size: 100%;
+    color: #ffffff;
+    border: none;
+    padding: 2% 10%;
+}
+
+.button-accept {
+    background: url("../resources/button-login.png") no-repeat center;
+    background-size: 100%;
+    color: #ffffff;
+    border: none;
+    padding: 2% 10%;
+}
+
+.field{
+    background: url('../resources/field.png') no-repeat center;
+    background-size: 100%;
+    align-content: center;
+}
+
+.title-custom{
+    background: url('../resources/title.png') no-repeat center;
+    background-size: 100%;
+    align-content: center;
+}
+
+.title-global{
+    background: url('../resources/Artboard-83.png') no-repeat center;
+    background-size: 100%;
+    align-content: center;
+    margin-left: 0 !important;
+    margin-right: 6%;
+}
+
+.title-global_transfer{
+    background: url('../resources/Artboard-83.png') no-repeat center;
+    background-size: 100%;
+    align-content: center;
+    margin-left: 6%;
+    margin-right: 6%;
+    height: 14px;
+}
+
+.title-trans{
+    background: url('../resources/Artboard-84.png') no-repeat center;
+    background-size: 100%;
+    align-content: center;
+}
+
+.transfer-amount {
+    padding-left: 7%;
+}
+
+.reference-transfer {
+    padding-left: 7%;
+    font-size: 0.9em;
+}
+
+.password {
+    background: url('../resources/password.png') no-repeat center;
+    background-size: 100%;
+}
+
+.button-next {
+    background: url('../resources/Artboard-64.png') no-repeat center;
+    background-size: 100%;
+}
+
+.description {
+    color: deepskyblue !important;
+    font-weight: bold;
+    padding-bottom: 3%;
+}
+
+.logo-account {
+    background: url("../resources/accept.png") center no-repeat;
+}
+
+.first-h5 {
+    display: inline;
+    float: left;
+    width: 47%;
+}
+
+.second-h5 {
+    font-weight: bold;
+    color: deepskyblue;
+    display: inline;
+    float: left;
+    width: 28%;
+}
+
+.first-h6 {
+    display: inline;
+    float: left;
+    width: 7%;
+}
+
+.instrument-icon {
+    display: inline;
+    float: left;
+    width: 10%;
+}
+
+.instrument-row {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.instrument-row img {
+    vertical-align: super;
+}
+
+.icon-searchable {
+    display: inline;
+    width: 7%;
+    float: right;
+    text-align: center;
+}
+
+.share {
+    text-align: right;
+    margin-top: 5%;
+}
+
+.share span {
+    color: #3a8bf6;
+}
+
+.share img {
+    vertical-align: sub;
+}
+
+.next {
+    width: 22px;
+    height: 17px !important;
+    margin-top: 22px;
+}
+
+.card-trans-select {
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.card-amount {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+@media (min-width: 300px) {
+    /***********         Tamanios fuentes dashboard          ***********/
+    .dashboard-list-element h2 {
+        font-size: 1.2em;
+    }
+
+    .dashboard-list-element p {
+        font-size: 1.0em;
+    }
+
+    /***********         Fin tamanios fuentes dashboard          ***********/
+
+    /***********         Tamanios fuentes resumen financiero          ***********/
+    .welcome p {
+        font-size: 1.1em;
+    }
+
+    .global-row h5, .global-row h6 {
+        font-size: 0.7em;
+    }
+
+    /***********         Fin tamanios fuentes resumen financiero          ***********/
+
+    .details-amounts select {
+        font-size: 1.3em;
+    }
+
+    .details-amount-type {
+        font-size: 1.1em;
+    }
+
+    .details-mov-date span {
+        font-size: 1.1em;
+    }
+
+    .bs {
+        font-size: 0.8em;
+    }
+
+    .mov-desc-first {
+        font-size: 0.9em;
+    }
+
+    .mov-desc-second {
+        font-size: 0.9em;
+    }
+
+    .details-amount-value .bs {
+        font-size: 0.8em;
+    }
+
+    .details-amount-value .bs-amount {
+        font-size: 1.0em;
+    }
+
+    .details-mov-amount .bs {
+        font-size: 0.8em;
+    }
+
+    .details-mov-amount .bs-amount {
+        font-size: 1em;
+    }
+
+    .div-amount .title, .graphic-circles .title {
+        font-size: 1.1em;
+    }
+}
